@@ -82,7 +82,17 @@ int main(){
 
     // functions call
     char PCsPick = getPCsChoice();
-    char userPick = getUserInput();
+
+    // resolving the possible wrong inputs
+    
+    char userPick;
+    while (1){
+        userPick = getUserInput();
+        if (userPick == 'r' || userPick == 'p' || userPick == 's'){        ///// redo this later, char to string
+            break;
+        }
+    }
+
     char result = getResult (userPick, PCsPick);
 
     // switch...cases to print out the results
